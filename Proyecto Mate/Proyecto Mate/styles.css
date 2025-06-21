@@ -1,0 +1,233 @@
+/* ---- VARIABLES Y ESTILOS GLOBALES ---- */
+:root {
+    --color-primario: #111111;
+    --color-secundario: #FFFFFF;
+    --color-texto: #333333;
+    --color-acento: #007aff;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--color-acento);
+    color: var(--color-secundario);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* ---- HEADER Y NAVEGACIÓN ---- */
+.main-header {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-secundario);
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    padding: 1rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--color-acento);
+}
+
+/* ---- GALERÍA ---- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-item {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CRÍTICO: Evita que las fotos se deformen */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ---- SECCIÓN SOBRE MÍ ---- */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* ---- FORMULARIO DE CONTACTO ---- */
+
+/* Estilo para el párrafo de introducción de la sección de contacto */
+#contact p {
+    text-align: center;
+    margin-bottom: 2rem; /* Le damos un poco de espacio extra debajo */
+}
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 15px;
+    font-family: var(--fuente-principal);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ---- FOOTER ---- */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-primario);
+    color: #aaa;
+}
+
+.social-links a {
+    color: #aaa;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-acento);
+}
+
+/* ---- LIGHTBOX ---- */
+.lightbox-container {
+    display: none; /* CORRECCIÓN: Oculto por defecto */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nueva clase que usará JavaScript para mostrar el lightbox */
+.lightbox-container.visible {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    /* Añadimos una animación sutil */
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* Animación para la imagen */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* ---- DISEÑO RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

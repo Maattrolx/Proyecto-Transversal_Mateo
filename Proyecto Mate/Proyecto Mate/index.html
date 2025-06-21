@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <meta name="description" content="Portafolio de fotografía profesional de [Mat]. Especialista en retratos, paisajes y eventos.">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">Mateo Zacipa</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery" class="container">
+            <h2 class="section-title">Proyectos en los que he colaborado</h2>
+            <div class="photo-grid">
+                <div class="grid-item"><img src="imagenes/Mat1.jpg" alt="Foto de graffiti en un túnel"></div>
+                <div class="grid-item"><img src="imagenes/Mat2.jpg" alt="Foto de un skater sentado"></div>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <img src="imagenes/Mat3.jpg" alt="Retrato del fotógrafo" class="profile-pic">
+                <div class="about-text">
+                    <h3>Nacido para crear, impulsado por el hambre de mas</h3>
+                    <p>Desde niño senti dentro el hambre de crear, de no conformarme con lo que el mundo me daba, mientras otros soñaban con juegos o fantasias, yo buscaba caminos para construir, para transformar lo poco en mucho porque entendi que el dinero no es solo riqueza: es libertad, es herramienta, es la forma de escribir mi propio destino. asi entre caidas, ventas, proyectos, fui descurbiendo que los negocios no son solo cifras: son mi manera de mirar la vida, con vision, con fuego, con ganas de siempre ir por mas</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2 class="section-title">Hablemos</h2>
+            <p>¿Tienes un proyecto en mente o te sientes estancado pero tienes hambre de mas? Charlemos!</p>
+            <form id="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="social-links">
+            <a href="" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="" target="_blank" aria-label="500px"><i class="fab fa-500px"></i></a>
+        </div>
+        <p>&copy; 2025 Maatt_sk. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox-container">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+    </div>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
